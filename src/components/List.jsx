@@ -1,27 +1,11 @@
-import { useState } from 'react';
-import data from '../data';
 import Person from './Person';
 
-const List = () => {
-  const [people, setPeople] = useState(data);
-
-  console.log;
+const List = ({ people }) => {
   return (
-    <div style={{ background: '#fff' }}>
-      <h3>{people.length} birthdays today</h3>
+    <div>
       {people.map(({ name, id, age, image }) => {
-        return (
-          <Person key={id} name={name} age={age} image={image} width='75' />
-        );
+        return <Person key={id} name={name} age={age} image={image} />;
       })}
-      <button
-        type='button'
-        className='btn'
-        style={{ width: '100%' }}
-        onClick={() => setPeople([])}
-      >
-        Clear All
-      </button>
     </div>
   );
 };

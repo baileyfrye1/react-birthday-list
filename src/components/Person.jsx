@@ -1,7 +1,7 @@
-const Person = ({ name, age, id, image, width }) => {
+const Person = ({ name, age, image }) => {
   return (
     <div className='person'>
-      <img src={image} className='img' alt='' />
+      <img src={image} className='img' alt={name} />
       <div>
         <h4>{name}</h4>
         <p>{age} years</p>
